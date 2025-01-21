@@ -1,0 +1,22 @@
+name: gym-now
+
+services:
+  db:
+    image: bitnami/postgresql
+    env_file:
+        - ./db/.env
+    expose:
+      - 5432
+    ports:
+      - 5432:5432
+    networks:
+      - gym-now-network
+    volumes:
+      - db-data:/bitnami/postgresql
+
+volumes:
+  db-data:
+
+networks:
+  gym-now-network:
+    driver: bridge
