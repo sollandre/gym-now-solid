@@ -23,13 +23,6 @@ jobs:
           POSTGRESQL_DATABASE=GYM_NOW
           POSTGRESQL_PORT_NUMBER=5432
 
-volumes:
-  db-data:
-
-networks:
-  gym-now-network:
-    driver: bridge
-
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
